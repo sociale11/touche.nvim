@@ -60,7 +60,7 @@ function M.open()
 	})
 
 	local cmd = string.format(
-		"cat %s | fzf --prompt='New file > ' --print-query --bind='tab:replace-query' > %s",
+		"cat %s | fzf --prompt='New file > ' --print-query --bind='tab:replace-query,up:up+replace-query,down:down+replace-query' > %s",
 		vim.fn.shellescape(input_file),
 		vim.fn.shellescape(output_file)
 	)
